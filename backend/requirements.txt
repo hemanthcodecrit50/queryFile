@@ -4,3 +4,6 @@ pdfplumber
 python-docx
 langchain
 python-multipart
+cohere
+faiss-cpu
+python-dotenv
