@@ -7,3 +7,4 @@ python-multipart
 cohere
 faiss-cpu
 python-dotenv
+google-generativeai

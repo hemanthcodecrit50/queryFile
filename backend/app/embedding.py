@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()
 
 import cohere
 import faiss
@@ -24,3 +26,5 @@ def build_faiss_index(chunks, filename):
         pickle.dump(chunks, f)
 
     return f"{len(chunks)} chunks indexed using Cohere."
+
+__all__ = ["get_embeddings", "build_faiss_index"]
