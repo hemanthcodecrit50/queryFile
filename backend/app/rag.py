@@ -40,4 +40,14 @@ def run_rag(query: str, filename: str):
         return {"error": error}
 
     reasoning = get_reasoning_response(query, chunks)
-    return {"response": reasoning}
+    print("[DEBUG] Raw LLM output:", repr(reasoning))
+    import json
+    try:
+        parsed = json.loads(reasoning)
+        return parsed
+    except Exception:
+        # fallback: return a friendly message
+        return {
+            "decision": "unknown",
+            "justification": "Could not parse a clear answer from the model. Please rephrase your question or check your document."
+        }
